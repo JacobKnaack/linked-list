@@ -1,0 +1,14 @@
+{
+  "name": "linked-list",
+  "version": "1.0.0",
+  "description": "Creates a linked list module for use in javascript node environments",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test"
+  },
+  "author": "Jacob Knaack",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
