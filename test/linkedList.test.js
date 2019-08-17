@@ -2,9 +2,9 @@
 
 const LinkedList = require('../');
 
-describe('testing the linked list module', () => {
+describe('Testing the linked list module', () => {
   test('Module produces a linked list', () => {
-    const List = new LinkedList(1);
+    const List = new LinkedList({ data: 1 });
     expect(List.head).exists;
     expect(List.head.data).exists;
     expect(List.head.next).exists;
@@ -20,14 +20,15 @@ describe('testing the linked list module', () => {
   });
 
   test('Module can select an index if it exists', () => {
-    const List = new LinkedList(1);
+    const List = new LinkedList({ data: 1 });
+    console.log(List);
     expect(List.get(0)).toEqual(1);
     expect(List.get(1)).toBe(undefined);
   });
 
   test('Module can remove nodes', () => {
-    const List = new LinkedList(1);
+    const List = new LinkedList({ data: 1 });
     expect(List.remove(1)).toEqual({ data: 1, next: null, previous: null });
     expect(List).toEqual({ head: null });
-  })
+  });
 });

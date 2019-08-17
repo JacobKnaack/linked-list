@@ -20,3 +20,14 @@ Install using node
 npm install
 ```
 
+Import from source code
+
+```js
+const LinkedList = require('path/to/linked-list');
+```
+or common js
+```js
+import LinkedList from 'path/to/linked-list';
+```
+
+## Usage
