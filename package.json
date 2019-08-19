@@ -4,7 +4,7 @@
   "description": "Creates a linked list module for use in javascript node environments",
   "main": "index.js",
   "scripts": {
-    "test": "jest test"
+    "test": "jest --verbose --coverage"
   },
   "author": "Jacob Knaack",
   "license": "ISC",
