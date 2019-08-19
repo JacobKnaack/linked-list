@@ -20,6 +20,8 @@ Install using node
 npm install
 ```
 
+## Usage
+
 Import from source code
 
 ```js
@@ -30,4 +32,13 @@ or common js
 import LinkedList from 'path/to/linked-list';
 ```
 
-## Usage
+Use class methods to manipulate lists
+
+```js
+const List = new LinkedList();
+
+List.insert('My First Node');
+
+const index0 = List.get({ index: 0 });
+
+```
