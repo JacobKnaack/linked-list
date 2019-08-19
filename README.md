@@ -4,7 +4,7 @@
 
 Node library for creating and manipulating linked list data structures.
 
-## installation
+## Installation
 
 Currently only available as a local node module.
 
