@@ -1,13 +1,20 @@
 {
-  "name": "linked-list",
+  "name": "node-linked-list",
   "version": "1.0.0",
   "description": "Creates a linked list module for use in javascript node environments",
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JacobKnaack/linked-list.git"
+  },
   "author": "Jacob Knaack",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobknaack/linked-list/issues"
+  },
   "devDependencies": {
     "jest": "^24.8.0"
   }
