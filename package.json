@@ -1,7 +1,13 @@
 {
-  "name": "node-linked-list",
+  "name": "js-linked-list",
   "version": "1.0.0",
   "description": "Creates a linked list module for use in javascript node environments",
+  "keywords": [
+    "linked",
+    "list",
+    "data",
+    "structures"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --coverage"

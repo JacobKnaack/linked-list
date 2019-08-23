@@ -68,10 +68,21 @@ describe('Testing the linked list module', () => {
       List.insert(i);
       compare.insert(i);
     };
+
     it('changes node order', () => {
-      expect(List.shuffle().traverse()).not.toEqual(compare.traverse());
+      expect(List.shuffle().shuffle().traverse()).not.toEqual(compare.traverse());
     });
   });
+
+  describe('Module can reverse itself', () => {
+    it('Can return the list in reverse order', () => {
+      const list = new LinkedList();
+      for (let x = 1; x <= 5; x++) {
+        list.insert(x);
+      }
+      expect(list.reverse().head.data).toEqual(5);
+    })
+  })
 
   describe('Module can remove nodes', () => {
     it('Removed Node is not present in List', () => {

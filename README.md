@@ -1,4 +1,4 @@
-# Linked List
+# JS Linked List
 
 ![build passing](https://travis-ci.com/JacobKnaack/linked-list.svg?branch=master)
 
@@ -40,5 +40,5 @@ const List = new LinkedList();
 List.insert('My First Node');
 
 const index0 = List.get({ index: 0 });
-
 ```
+

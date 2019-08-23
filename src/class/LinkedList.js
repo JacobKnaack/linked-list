@@ -102,10 +102,12 @@ class LinkedList {
     // Create array of shuffled nodes;
     while (list1.length !== 0 || list2.length !== 0) {
       const flip = (Math.floor(Math.random() * 2) == 0);
-      let first = undefined
+      let first = undefined;
       let second = undefined;
+
       if (list1.length) first = new Node(list1[0]);
       if (list2.length) second = new Node(list2[0]);
+
       if (flip && first && second) {
         result.push.apply(result, [first, second]);
       } else if (!flip && first && second) {
@@ -114,6 +116,7 @@ class LinkedList {
         if (first) result.push(first);
         if (second) result.push(second);
       }
+
       if (list1.length) list1.shift();
       if (list2.length) list2.shift();
     }
@@ -131,6 +134,22 @@ class LinkedList {
     });
     this.head = result[0];
 
+    return this;
+  }
+
+  reverse() {
+    let current = this.head;
+    let tmp = null;
+    while (current) {
+      tmp = current.previous;
+      current.previous = current.next;
+      current.next = tmp;
+      current = current.previous;
+    }
+
+    if (tmp !== null) {
+      this.head = tmp.previous;
+    }
     return this;
   }
 
