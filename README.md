@@ -6,30 +6,22 @@ Node library for creating and manipulating linked list data structures.
 
 ## Installation
 
-Currently only available as a local node module.
-
-Get source code using git
+Available on NPM
 
 ```bash
-git clone https://github.com/JacobKnaack/linked-list.git
-```
-
-Install using node
-
-```bash
-npm install
+npm install @nohat/js-linked-list
 ```
 
 ## Usage
 
-Import from source code
+Import package
 
 ```js
-const LinkedList = require('path/to/linked-list');
+const LinkedList = require('@nohat/js-linked-list');
 ```
 or common js
 ```js
-import LinkedList from 'path/to/linked-list';
+import LinkedList from '@nohat/js-linked-list';
 ```
 
 Use class methods to manipulate lists
