@@ -10,7 +10,8 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage",
+    "watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",

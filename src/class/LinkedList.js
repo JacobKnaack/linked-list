@@ -4,28 +4,76 @@ const Node = require('./Node');
 
 class LinkedList {
   constructor(args) {
-    this.head = args ? new Node(args.data) : null;
+    let nodeValue = args ? new Node(args.data) : null;
+
+    this.head = nodeValue;
+    this.tail = nodeValue;
   }
 
   insert(data) {
+
     const newNode = new Node(data);
+
     if (this.head === null) {
+
       this.head = newNode;
+      this.tail = newNode;
       return this.head;
+
     } else {
+
       let current = this.head;
+
       while (current.next !== null) {
         current = current.next;
       }
+
       current.next = newNode;
       current.next.previous = current;
+      this.tail = current.next;
       return current.next;
+    }
+  }
+
+  insertBefore(value, newValue) {
+    let newNode = new Node(newValue);
+    if (this.head.data === value) {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    let current = this.head;
+    while (current.next) {
+      if (current.next.data === value) {
+        newNode.next = current.next;
+        current.next = newNode;
+        return current;
+      }
+      current = current.next;
+    }
+  }
+
+  insertAfter(value, newValue) {
+    let newNode = new Node(newValue);
+    if (this.head.data === value) {
+      newNode.next = this.head.next;
+      this.head.next = newNode;
+    }
+    let current = this.head;
+    while (current.next) {
+      if (current.next.data === value) {
+        newNode.next = current.next.next;
+        current.next.next = newNode;
+        return current;
+      }
+      current = current.next;
     }
   }
 
 
   get(args) {
+
     let current = this.head;
+
     if (Object.keys(args).includes('index')) {
       if (args.index > -1) {
         let i = 0;
@@ -137,9 +185,30 @@ class LinkedList {
     return this;
   }
 
-  reverse() {
+  kthFromEnd(position) {
+    let length = 0;
     let current = this.head;
+    while (current) {
+      length++;
+      current = current.next;
+    }
+    current = this.head;
+    if (length < position) {
+      return null;
+    }
+
+    for (let i = 1; i < length - position; i++) {
+      current = current.next;
+    }
+    return current.data;
+  }
+
+  reverse() {
+    this.tail = this.head;
+    let current = this.head;
+
     let tmp = null;
+
     while (current) {
       tmp = current.previous;
       current.previous = current.next;

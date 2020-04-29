@@ -38,7 +38,7 @@ describe('Testing the linked list module', () => {
     it('Can select by data value', () => {
       expect(List.get({ data: 1 }).data).toEqual(1);
       expect(List.get({ data: 'wrong' })).toEqual(undefined);
-    })
+    });
   });
 
   describe('Module can determine if a value is present', () => {
@@ -80,7 +80,15 @@ describe('Testing the linked list module', () => {
       for (let x = 1; x <= 5; x++) {
         list.insert(x);
       }
-      expect(list.reverse().head.data).toEqual(5);
+
+      // expect list to have values 1 through 5
+      expect(list.head.data).toEqual(1);
+      expect(list.head.next.data).toEqual(2);
+      list.reverse();
+
+      // list should contain reversed values
+      expect(list.head.data).toEqual(5);
+      expect(list.tail.data).toEqual(1);
     })
   })
 
@@ -96,4 +104,42 @@ describe('Testing the linked list module', () => {
       expect(List.traverse().length).toEqual(4);
     });
   });
+
+  describe('Module can insert before', () => {
+    it('Inserts before a value', () => {
+      const list = new LinkedList();
+      list.insert(2);
+      list.insert(4);
+      list.insert(3);
+      list.insertBefore(3, 1)
+      expect(list.head.next.next.data).toBe(1);
+      expect(list.tail.data).toBe(3);
+    });
+  });
+
+  describe('Module can insert after', () => {
+    it('Inserts after a given value', () => {
+      const list = new LinkedList();
+      list.insert(1);
+      list.insert(3);
+      list.insertAfter(3, 4);
+      list.insertAfter(4, 5);
+      list.insertAfter(1, 2);
+      expect(list.head.data).toBe(1);
+      expect(list.head.next.data).toBe(2);
+      expect(list.head.next.next.next.data).toBe(4);
+      expect(list.head.next.next.next.next.data).toBe(5);
+    });
+  });
+
+  describe('Module can find a node by position from the end', () => {
+    it('returns a node or null', () => {
+      const list = new LinkedList();
+      list.insert(1);
+      list.insert(3);
+      list.insert(5);
+      expect(list.kthFromEnd(4)).toBe(null);
+      expect(list.kthFromEnd(2)).toBe(1);
+    })
+  })
 });
