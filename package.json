@@ -1,12 +1,13 @@
 {
   "name": "@nohat/js-linked-list",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Creates a linked list module for use in javascript node environments",
   "keywords": [
     "linked",
     "list",
-    "data",
-    "structures"
+    "data-structures",
+    "structures",
+    "dynamic"
   ],
   "main": "index.js",
   "scripts": {
@@ -15,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JacobKnaack/linked-list.git"
+    "url": "https://github.com/JacobKnaack/js-linked-list.git"
   },
   "author": "Jacob Knaack",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jacobknaack/linked-list/issues"
+    "url": "https://github.com/jacobknaack/js-linked-list/issues"
   },
   "devDependencies": {
     "jest": "^24.8.0"
